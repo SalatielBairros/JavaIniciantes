@@ -8,8 +8,68 @@ import java.io.InputStreamReader;
 class Loops {
     void Run()
     {
-        Exercicio5();
+        Exercicio8();
     }
+
+	private void Exercicio8() {
+		/* 8) Escreva um algoritmo para ler 10 números.
+		Todos os números lidos com valor inferior a 40 devem ser somados. Escreva o valor final da soma efetuada. */
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int sumNumbers = 0;
+		for (int i = 0; i < 10; i ++){
+			System.out.println("Digite o " + (i + 1) + "º número: ");
+			try {
+				int n = Integer.parseInt(br.readLine());
+				if(n < 40){
+					sumNumbers += n;
+				}
+			}catch (Exception ex){
+				System.out.println("Valor inválido.");
+			}
+		}
+		System.out.println("Resultado da soma: " + sumNumbers);
+	}
+
+	private void Exercicio7() {
+		/* 7) Faça um algoritmo que receba a idade de 5 pessoas e mostre mensagem informando "maior de idade"
+		e "menor de idade" para cada pessoa. Considere a idade a partir de 18 anos como maior de idade. */
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int countNumbers = 0;
+		for (int i = 1; i <= 5; i ++){
+			System.out.println("Digite a idade da " + i + "º pessoa: ");
+			try {
+				int n = Integer.parseInt(br.readLine());
+				if(n >= 18){
+					System.out.println("MAIOR DE IDADE.");
+				}else{
+					System.out.println("MENOR DE IDADE.");
+				}
+			}catch (Exception ex){
+				System.out.println("Valor inválido.");
+			}
+		}
+	}
+
+	private void Exercicio6() {
+		/* 6) Ler 10 valores e escrever quantos desses valores lidos são NEGATIVOS. */
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int countNumbers = 0;
+		for (int i = 0; i < 10; i ++){
+			System.out.println("Digite o " + (i + 1) + "º número: ");
+			try {
+				int n = Integer.parseInt(br.readLine());
+				if(n < 0){
+					countNumbers++;
+				}
+			}catch (Exception ex){
+				System.out.println("Valor inválido.");
+			}
+		}
+		System.out.println(countNumbers + " itens são negativos.");
+	}
 
 	private void Exercicio5()
 	{
