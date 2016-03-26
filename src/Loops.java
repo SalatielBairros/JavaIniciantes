@@ -8,8 +8,30 @@ import java.io.InputStreamReader;
 class Loops {
     void Run()
     {
-        Exercicio8();
+        Exercicio9();
     }
+
+	private void Exercicio9() {
+		/* 9) Crie um algoritmo que o usuário entre com vários números inteiros e positivos e
+		imprima o produto dos números ímpares e a soma dos números pares.  */
+
+		//Como o enunciado diz apenas "vários números", vou exigir 10 numeros do usuário.
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int sumNumbers = 0;
+		for (int i = 0; i < 10; i ++){
+			System.out.println("Digite o " + (i + 1) + "º número: ");
+			try {
+				int n = Integer.parseInt(br.readLine());
+				if(n < 40){
+					sumNumbers += n;
+				}
+			}catch (Exception ex){
+				System.out.println("Valor inválido.");
+			}
+		}
+		System.out.println("Resultado da soma: " + sumNumbers);
+	}
 
 	private void Exercicio8() {
 		/* 8) Escreva um algoritmo para ler 10 números.
