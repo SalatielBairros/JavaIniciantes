@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Random;
 
 /**
  * Created by Salatiel on 24/03/2016.
@@ -8,8 +9,82 @@ import java.io.InputStreamReader;
 class Loops {
     void Run()
     {
-        Exercicio9();
+        Exercicio12();
     }
+
+	private void Exercicio12() {
+		/*12) Um jogo de adivinhação:
+		a. Gerar um numero inteiro aleatório entre 1 e 10 (numero alvo).
+		b. Perguntar um valor para chute.
+				c. Informar se o valor chute é maior ou é menor que o numero alvo.
+				d. O jogo só para quando o numero alvo for adivinhado.
+				Dica: pesquisar a classe random para java.*/
+
+		//Referência Random: http://www.k19.com.br/artigos/numeros-aleatorios-em-java-a-classe-random/
+
+		int randomNumber = (new Random().nextInt(10) + 1);
+		while(true) {
+			String number = JOptionPane.showInputDialog("Qual número da sequencia? ");
+			try {
+				int n = Integer.parseInt(number);
+				if (n == randomNumber) {
+					System.out.println("Você acertou!");
+					break;
+				} else {
+					System.out.println("Valor errou! O número correto é " + (n < randomNumber ? "MAIOR" : "MENOR"));
+				}
+			} catch (Exception ex) {
+				System.out.println("Valor inválido.");
+			}
+		}
+	}
+
+	private void Exercicio11() {
+		/* 11) Um algoritmo que retorne o N-ésimo termo da série de fibonacci. */
+
+		String number = JOptionPane.showInputDialog("Qual número da sequencia? ");
+		try {
+			int n = Integer.parseInt(number);
+			if(n >= 0) {
+
+				int F = 0; // atual
+				int ant = 0; // anterior
+				for (int i = 1; i <= n; i++)
+				{
+					if (i == 1) {
+						F = 1; ant = 0;
+					} else {
+						F += ant; ant = F - ant;
+					}
+				}
+				System.out.println("Resultado: " + F);
+			}else {
+				System.out.println("O número deve ser positivo.");
+			}
+		}catch (Exception ex){
+			System.out.println("Valor inválido.");
+		}
+	}
+
+	private void Exercicio10() {
+		/* 10) Ler um valor e realizar o calculo do fatorial do valor. */
+
+		String number = JOptionPane.showInputDialog("Digite um número positivo: ");
+		try {
+			int n = Integer.parseInt(number);
+			if(n >= 0) {
+				int result = 1;
+				for (int i = n; i > 0; i--){
+					result *= i;
+				}
+				System.out.println("Resultado: " + result);
+			}else {
+				System.out.println("O número deve ser positivo.");
+			}
+		}catch (Exception ex){
+			System.out.println("Valor inválido.");
+		}
+	}
 
 	private void Exercicio9() {
 		/* 9) Crie um algoritmo que o usuário entre com vários números inteiros e positivos e
@@ -23,8 +98,12 @@ class Loops {
 			System.out.println("Digite o " + (i + 1) + "º número: ");
 			try {
 				int n = Integer.parseInt(br.readLine());
-				if(n < 40){
-					sumNumbers += n;
+				if(n >= 0) {
+					if (n < 40) {
+						sumNumbers += n;
+					}
+				}else {
+					System.out.println("O número deve ser positivo.");
 				}
 			}catch (Exception ex){
 				System.out.println("Valor inválido.");
