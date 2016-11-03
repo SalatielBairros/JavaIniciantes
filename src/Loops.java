@@ -9,7 +9,7 @@ import java.util.Random;
 class Loops {
     void Run()
     {
-        Exercicio12();
+	    Exercicio6();
     }
 
 	private void Exercicio12() {

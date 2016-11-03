@@ -4,21 +4,22 @@ import java.util.stream.IntStream;
 
 public class Functions {
 	public void Run(){
-		double[][] matrix1 = {{10, 20}, {30, 40}};
-		double[][] matrix2 = {{50, 60}, {70, 80}};;
-		Exercicio9(matrix1, matrix2);
+		//double[][] matrix1 = {{10, 20}, {30, 40}};
+		//double[][] matrix2 = {{50, 60}, {70, 80}};
+		int[] vetorText = {5, 6, 8, 7, 10, 55};
+		Exercicio6(vetorText);
 	}
 
 	private String Exercicio1(String nome, String sobrenome) {
-		/* Crie uma função que recebe dois argumentos, nome e sobrenome, e retorna uma
-		String com o nome completo separado por espaço. */
+		/* Crie uma funï¿½ï¿½o que recebe dois argumentos, nome e sobrenome, e retorna uma
+		String com o nome completo separado por espaï¿½o. */
 		
 		return (nome + " " + sobrenome);
 	}
 	
 	private int Soma_Exercicio2(int v1, int v2){
-		/* Crie uma função chamada “Soma” que realize operação de soma para dois argumentos
-		recebidos. Crie uma função polimórfica de soma que receba 3 e realize a soma dos
+		/* Crie uma funï¿½ï¿½o chamada ï¿½Somaï¿½ que realize operaï¿½ï¿½o de soma para dois argumentos
+		recebidos. Crie uma funï¿½ï¿½o polimï¿½rfica de soma que receba 3 e realize a soma dos
 		valores. */
 		
 		return (v1 + v2);
@@ -29,43 +30,43 @@ public class Functions {
 	}
 	
 	private void Exercicio3(double d1, double d2){
-		/* Crie uma função que receba dois argumentos double, realize as operações aritméticas
-		básicas (soma, subtração, multiplicação e divisão) entre os valores e escreva na tela os
+		/* Crie uma funï¿½ï¿½o que receba dois argumentos double, realize as operaï¿½ï¿½es aritmï¿½ticas
+		bï¿½sicas (soma, subtraï¿½ï¿½o, multiplicaï¿½ï¿½o e divisï¿½o) entre os valores e escreva na tela os
 		resultados. */
 		
 		System.out.println("SOMA: " + (d1 + d2));
-		System.out.println("SUBTRAÇÃO: " + (d1 - d2));
-		System.out.println("MULTIPLICAÇÃO: " + (d1 * d2));
-		System.out.println("DIVISÃO: " + (d1 / d2));
+		System.out.println("SUBTRAï¿½ï¿½O: " + (d1 - d2));
+		System.out.println("MULTIPLICAï¿½ï¿½O: " + (d1 * d2));
+		System.out.println("DIVISï¿½O: " + (d1 / d2));
 	}
 	
 	private int Exercicio4(int[] values){
-		/* Crie uma função que receba um vetor de inteiros como argumento e tem como
+		/* Crie uma funï¿½ï¿½o que receba um vetor de inteiros como argumento e tem como
 		retorno o menor valor contido no vetor. */		
 		return Arrays.stream(values).min().getAsInt();
 	}
 	
 	private double Exercicio5(double[] values){
-		/* Crie uma função que receba um vetor de double como argumento e tenha como
-		retorno o somatório dos valores contidos. */
+		/* Crie uma funï¿½ï¿½o que receba um vetor de double como argumento e tenha como
+		retorno o somatï¿½rio dos valores contidos. */
 		
 		return Arrays.stream(values).sum();
 	}
 	
 	private int Exercicio6(int[] values){
-		/* Crie uma função que receba um vetor de inteiros como argumento e tem como
-		retorno o índice do menor valor contido no vetor. */
+		/* Crie uma funï¿½ï¿½o que receba um vetor de inteiros como argumento e tem como
+		retorno o ï¿½ndice do menor valor contido no vetor. */
 		
 		int menor = 0;
 		for(int i = 0; i < values.length; i++){
-			if(values[menor] > values[i]) menor = 1;
+			if(values[menor] > values[i]) menor = i;
 		}
 		return menor;
 	}
 	
 	private int[] Exercicio7(int[] vetor1, int[] vetor2){
 		/* Receba dois vetores de inteiros como argumentos, multiplique os valores entre os
-		vetores índice a índice, e retorne o vetor resultante da operação. */
+		vetores ï¿½ndice a ï¿½ndice, e retorne o vetor resultante da operaï¿½ï¿½o. */
 		
 		int maxL, minL;
 		boolean oneB = true;
@@ -91,8 +92,8 @@ public class Functions {
 	}
 	
 	private void Exercicio8(String[] vetor1, String[] vetor2){
-		/* Receba dois vetores de string, concatene os valores contidos índice a índice separando
-		os por “:” e escreva os resultados na tela. */
+		/* Receba dois vetores de string, concatene os valores contidos ï¿½ndice a ï¿½ndice separando
+		os por ï¿½:ï¿½ e escreva os resultados na tela. */
 		
 		int maxL, minL;
 		boolean oneB = true;
@@ -115,11 +116,11 @@ public class Functions {
 	}
 	
 	private void Exercicio9(double[][] matrix1, double[][] matrix2){
-		/* Crie uma função que receba duas matrizes de double como argumento e escreva na
-		tela o resultado das operações de soma e subtração entre elas. */
+		/* Crie uma funï¿½ï¿½o que receba duas matrizes de double como argumento e escreva na
+		tela o resultado das operaï¿½ï¿½es de soma e subtraï¿½ï¿½o entre elas. */
 		
-		//OBS.: Não está realizando a validação de tamanho apenas porque é um esforço desnecessário para a finalidade do exercício;
-		// TODO está mal feita.
+		//OBS.: Nï¿½o estï¿½ realizando a validaï¿½ï¿½o de tamanho apenas porque ï¿½ um esforï¿½o desnecessï¿½rio para a finalidade do exercï¿½cio;
+		// TODO estï¿½ mal feita.
 		
 		for(int i = 0; i < matrix1.length; i++){
 			for(int j = 0; j < matrix1[i].length; j++){
